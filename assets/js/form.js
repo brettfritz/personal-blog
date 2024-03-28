@@ -11,7 +11,12 @@ let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
 // Also upon clicking of the post, changes the window to the blog.html page
 submitButton.addEventListener('click', function (event){
     event.preventDefault();
-    
+// alert if any of the fields are blank
+    if (!username.value || !title.value || !msg.value.trim()) {
+        alert("Please complete all fields before submitting.");
+        return;
+    }
+    // creates array of the input fields
     const blogPost = {
         username: username.value,
         title: title.value,
@@ -19,7 +24,7 @@ submitButton.addEventListener('click', function (event){
     };
 
     blogPosts.push(blogPost);
-
+// puts blog post in local storage
     localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
 
     window.location.href = 'blog.html';
