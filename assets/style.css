@@ -101,3 +101,14 @@ input[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
 }
+
+footer {
+    display: flex;
+    padding: 20px;
+    background-color: rgb(133, 167, 155);
+    border: 5px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
